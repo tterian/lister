@@ -1,10 +1,90 @@
 /* Custom colors */
-$white: #000;
-
+$white:		#fff;
+$silver:	#66757f;
+$green-sea:	#16a085;
 
 /* Navigation bar styling */
 .global-nav {
-	background: $white;
 	height: 46px;
-	display: block;
 }
+
+.title-area li {
+	display: inline-block;
+}
+
+.home-icon {
+	color: $silver;
+	float: left;
+	font-size: 30px;
+}
+
+.home-style {
+	color: $silver;
+	float: left;
+	font-size: 13px;
+	margin-left: 5px;
+	margin-top: 13px;
+}
+
+.feed-icon {
+	color: $silver;
+	float: left;
+	margin-left: 4px;
+	font-size: 30px;
+}
+
+.feed-style {
+	color: $silver;
+	font-size: 13px;
+	margin-left: 5px;
+	margin-top: 13px;
+}
+
+.divider {
+	width: 40px;
+}
+
+
+
+/* Styles for expanding search element */
+
+.search-wrap {
+	background-color: $white;
+	padding-top: 1px;
+	.search-icon {
+		position: absolute;
+	}
+}
+
+.nav-search {
+	background: $white;
+}
+
+.right-section {
+	display: inline-block;
+}
+
+.fi-magnifying-glass {
+	position: absolute;
+	margin-left: 148px;
+	font-size: 22px;
+	color: #cccccc;
+	z-index: 2;
+}
+
+.nav-add {
+	background: $white;
+	padding-top: 1px;
+	padding-left: 4px;
+	.fi-plus {
+		position: absolute;
+		margin-top: 5px;
+		margin-left: 6px;
+		font-size: 22px;
+		color: $white;
+		z-index: 2;
+	}
+}
+
+
+

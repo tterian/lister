@@ -1,39 +1,53 @@
-<div class="contain-to-grid">
+<div class="contain-to-grid sticky">
 
-<nav class="top-bar global-nav">
+	<nav class="top-bar global-nav">
+		<!-- Home Icon -->
+		<ul class="title-area">
+			<li>
+				<a href="/">
+					<span class="fi-home home-icon"></span>
+					<span class="home-style">Home</span>
+				</a>
+			</li>
+			<li class="divider"></li>
+		</ul>
 
-          <ul class="title-area">
-            <li class="name">
-              <h1><a href="#">Listr</a></h1>
-            </li>
-             <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-          </ul>
+		<section class="top-bar-section">
+			<!-- My Feed Icon -->
+			<ul class="left left-section">
+				<li>
+					<a href="feed">
+						<span class="fi-list-bullet feed-icon"></span>
+						<span class="feed-style">My Feed</span>
+					</a>
+				</li>
+			</ul>
+
+			<!-- Right Nav Section -->
+			<div class="right right-section">
+        		<ul class="right nav-actions">
+        			<!-- Search section -->
+        			<li>
+						<div class="search-wrap">
+							<a href="#" class="search-icon"><i class="fi-magnifying-glass"></i></a>
+            				<%= form_tag "/search", method: 'get', enforce_utf8: false, class: "nav-search radius" do %>
+								<%= text_field_tag :q, params[:q], placeholder: "Search a car", class: "text-search radius" %>
+							<% end %>
+        				</div>
+        			</li>
+        			<li class="divider-right"></li>
+					<li>
+						<div class="nav-add">
+							<a href="#" class="button radius">Add Car</a>
+						</div>
+					</li>
+					<li><a href="#">Log in</a></li>
+				</ul>
+			</div>
 
 
-    
-
-          <section class="top-bar-section">
-            <!-- Right Nav Section -->
-            <ul class="right">
-              <li class="active"><a href="#">Right Button Active</a></li>
-              <li class="has-dropdown">
-                <a href="#">Right Button Dropdown</a>
-                <ul class="dropdown">
-                  <li><a href="#">First link in dropdown</a></li>
-                  <li class="active"><a href="#">Active link in dropdown</a></li>
-                </ul>
-              </li>
-            </ul>
-
-            <!-- Left Nav Section -->
-            <ul class="left">
-              <li><a href="#">Left Nav Button</a></li>
-            </ul>
-          </section>
-
-
-</nav>
+		</section>
+	</nav>
 
 </div>
 
