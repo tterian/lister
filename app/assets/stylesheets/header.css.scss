@@ -1,7 +1,7 @@
 /* Custom colors */
-$white:		#fff;
-$silver:	#66757f;
-$green-sea:	#16a085;
+$white		: #fff;
+$silver		: #66757f;
+$green-sea	: #16a085;
 
 /* Navigation bar styling */
 .global-nav {
@@ -58,7 +58,17 @@ $green-sea:	#16a085;
 
 .nav-search {
 	background: $white;
+	.text-search {
+		font-size: 13px;
+	}
 }
+
+.nav-add {
+	.button {
+		font-size: 13px;
+	}
+}
+
 
 .right-section {
 	display: inline-block;
