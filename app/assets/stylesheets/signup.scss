@@ -1,0 +1,29 @@
+/* Custom colors */
+$white			: #fff;
+$asbestos		: #7f8c8d;
+$silver-light	: #bdc3c7;
+
+.signup-content {
+	display: block;
+	position: relative;
+	padding: 56px;
+	.signup-descr {
+		h2, p {
+			color: $asbestos;
+		}
+	}
+
+	.login-field {
+		background: $white;
+		border: 1px solid $silver-light;
+		padding: 10px 10px 0px 10px;
+	}
+
+	.signup-field {
+		background: $white;
+		border: 1px solid $silver-light;
+		margin-top: 20px;
+		padding: 10px 10px 0 10px;
+	}
+
+}

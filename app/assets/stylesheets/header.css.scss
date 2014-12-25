@@ -1,11 +1,20 @@
 /* Custom colors */
-$white		: #fff;
-$silver		: #66757f;
-$green-sea	: #16a085;
+$white			: #fff;
+$silver			: #66757f;
+$green-sea		: #16a085;
+$silver-light	: #bdc3c7;
+$concrete		: #95a5a6;
 
-/* Navigation bar styling */
-.global-nav {
+
+/* Top bar styling */
+.topbar {
 	height: 46px;
+	border-bottom: 1px solid $silver-light;
+	position: fixed;		
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 1000;
 }
 
 .title-area li {
@@ -22,7 +31,7 @@ $green-sea	: #16a085;
 	color: $silver;
 	float: left;
 	font-size: 13px;
-	margin-left: 5px;
+	padding-left: 5px;
 	margin-top: 13px;
 }
 

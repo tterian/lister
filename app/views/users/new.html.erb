@@ -1,2 +1,28 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<div class="row signup-content">
+	<div class="large-6 columns signup-descr left">
+		<h2><b>Welcome to Lister.</b></h2>
+		<p>A user-friendly platform for posting and selling cars.</p>
+	</div>
+	
+	<div class="large-6 columns right">
+	    <%= form_for @user do |f| %>		
+	    	<%= render 'shared/error_messages' %>
+			
+			<div class="login-field">
+	      		<%= f.text_field :email, placeholder: "Email", class: "form-control radius" %>
+	      		<%= f.password_field :password, placeholder: "Password", class: "form-control radius" %>
+	      		<!-- checkbox here -->
+	      		<%= f.submit "Log in", class: "button radius" %>
+	      	</div>
+
+	      	<div class="signup-field">
+	      		<%= f.text_field :name, placeholder: "Username", class: "form-control radius"  %>
+	      		<%= f.text_field :email, placeholder: "Email", class: "form-control radius" %>
+	      		<%= f.password_field :password, placeholder: "Password", class: "form-control radius" %>	      		
+	      		<%= f.password_field :password_confirmation, placeholder: "Confirm password", class: "form-control radius" %>
+
+	      		<%= f.submit "Sign up for Lister", class: "button radius" %>
+	      	</div>
+	    <% end %>
+	</div>
+</div>

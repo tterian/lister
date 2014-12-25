@@ -92,8 +92,8 @@ $row-width: rem-calc(1000);
 // $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
 // We use these to define default font weights
-// $font-weight-normal: normal !default;
-// $font-weight-bold: bold !default;
+$font-weight-normal: normal !default;
+$font-weight-bold: bold !default;
 
 // We use these as default colors throughout
 // $primary-color: #008CBA;
@@ -1100,11 +1100,11 @@ $button-bg-color: $green-sea;
 // $reveal-box-shadow: 0 0 10px rgba($black,.4);
 
 // We use these to style the reveal close button
-// $reveal-close-font-size: rem-calc(40);
+$reveal-close-font-size: rem-calc(30);
 // $reveal-close-top: rem-calc(8);
 // $reveal-close-side: rem-calc(11);
 // $reveal-close-color: $base;
-// $reveal-close-weight: $font-weight-bold;
+$reveal-close-weight: $font-weight-normal;
 
 // We use this to set the default radius used throughout the core.
 // $reveal-radius: $global-radius;
