@@ -5,8 +5,7 @@
 	</div>
 	
 	<div class="large-6 columns right">
-	    <%= form_for @user do |f| %>		
-	    	<%= render 'shared/error_messages' %>
+	    <%= form_for @user do |f| %>
 			
 			<div class="panel radius login-field">
 	      		<%= f.text_field :email, placeholder: "Email", class: "form-control radius" %>
@@ -22,7 +21,7 @@
 	      	</div>
 
 	      	<div class="panel radius signup-field">
-	      		<p>New to Lister? <%= link_to "Sign up!", signup_path %></p>
+	      		<p>New to Lister? Sign up!</p>
 	      		<%= f.text_field :name, placeholder: "Username", class: "form-control radius"  %>
 	      		<%= f.text_field :email, placeholder: "Email", class: "form-control radius" %>
 	      		<%= f.password_field :password, placeholder: "Password", class: "form-control radius" %>	      		
@@ -31,4 +30,11 @@
 	      	</div>
 	    <% end %>
 	</div>
+	      	
+	<div class="row">
+	  	<div class="large-12 columns">
+	      	<%= render 'shared/error_messages' %>
+	    </div>
+	</div>
+
 </div>
