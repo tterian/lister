@@ -5,8 +5,7 @@
 	</div>
 	
 	<div class="large-6 columns right">
-	    <%= form_for @user do |f| %>
-			
+		<%= form_for(:session, url: login_path) do |f| %>
 			<div class="panel radius login-field">
 	      		<%= f.text_field :email, placeholder: "Email", class: "form-control radius" %>
 	      		<div class="row">
@@ -19,7 +18,9 @@
 	      			<!-- checkbox here -->
 	      		</div>
 	      	</div>
+	    <% end %>
 
+	    <%= form_for @user do |f| %>
 	      	<div class="panel radius signup-field">
 	      		<p>New to Lister? Sign up!</p>
 	      		<%= f.text_field :name, placeholder: "Username", class: "form-control radius"  %>
