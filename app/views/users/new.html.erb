@@ -8,20 +8,26 @@
 	    <%= form_for @user do |f| %>		
 	    	<%= render 'shared/error_messages' %>
 			
-			<div class="login-field">
+			<div class="panel radius login-field">
 	      		<%= f.text_field :email, placeholder: "Email", class: "form-control radius" %>
-	      		<%= f.password_field :password, placeholder: "Password", class: "form-control radius" %>
-	      		<!-- checkbox here -->
-	      		<%= f.submit "Log in", class: "button radius" %>
+	      		<div class="row">
+	      			<div class="large-8 columns">
+	      				<%= f.password_field :password, placeholder: "Password", class: "form-control radius" %>
+	      			</div>
+	      			<div class="large-4 columns">
+	      				<%= f.submit "Log in", class: "button radius right" %>
+	      			</div>
+	      			<!-- checkbox here -->
+	      		</div>
 	      	</div>
 
-	      	<div class="signup-field">
+	      	<div class="panel radius signup-field">
+	      		<p>New to Lister? <%= link_to "Sign up!", signup_path %></p>
 	      		<%= f.text_field :name, placeholder: "Username", class: "form-control radius"  %>
 	      		<%= f.text_field :email, placeholder: "Email", class: "form-control radius" %>
 	      		<%= f.password_field :password, placeholder: "Password", class: "form-control radius" %>	      		
 	      		<%= f.password_field :password_confirmation, placeholder: "Confirm password", class: "form-control radius" %>
-
-	      		<%= f.submit "Sign up for Lister", class: "button radius" %>
+	      		<%= f.submit "Sign up for Lister", class: "button radius right" %>
 	      	</div>
 	    <% end %>
 	</div>
