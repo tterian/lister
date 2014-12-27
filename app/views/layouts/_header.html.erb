@@ -1,7 +1,8 @@
 <div class="contain-to-grid sticky topbar">
 
 	<nav class="top-bar global-nav">
-		<!-- Home Icon -->
+		<% if logged_in? %>
+		<!-- Home Icon for logged in users-->
 		<ul class="title-area">
 			<li>
 				<a href="/">
@@ -12,41 +13,98 @@
 			<li class="divider"></li>
 		</ul>
 
+		<!-- Right and left bars for logged in users-->
 		<section class="top-bar-section">
-			<!-- My Feed Icon -->
-			<ul class="left left-section">
-				<li>
-					<a href="feed">
-						<span class="fi-list-bullet feed-icon"></span>
-						<span class="feed-style">My Feed</span>
-					</a>
-				</li>
-			</ul>
-
-			<!-- Right Nav Section -->
-			<div class="right right-section">
-        		<ul class="right nav-actions">
-        			<!-- Search section -->
-        			<li>
-						<div class="search-wrap">
-							<a href="#" class="search-icon"><i class="fi-magnifying-glass"></i></a>
-            				<%= form_tag "/search", method: 'get', enforce_utf8: false, class: "nav-search radius" do %>
-								<%= text_field_tag :q, params[:q], placeholder: "Search a car", class: "text-search radius" %>
-							<% end %>
-        				</div>
-        			</li>
-        			<li class="divider-right"></li>
+			<!-- Left Nav -->
+				<ul class="left left-section">
 					<li>
-						<div class="nav-add">
-							<%= link_to "Add Car", signup_path, class: "button radius" %> 
-						</div>
+						<a href="mail">
+							<span class="fi-mail mail-icon"></span>
+							<span class="mail-style">Notifications</span>
+						</a>
 					</li>
-					<li><%= link_to "Sign Up", signup_path %></li>
+
+					<li>
+						<a href="feed">
+							<span class="fi-list-bullet feed-icon"></span>
+							<span class="feed-style">My Feed</span>
+						</a>
+					</li>
 				</ul>
-			</div>
 
-
+			<!-- Right Nav -->
+				<div class="right right-section">
+	        		<ul class="right nav-actions">
+	        			<!-- Search section -->
+	        			<li>
+							<div class="search-wrap">
+								<a href="#" class="search-icon"><i class="fi-magnifying-glass"></i></a>
+	            				<%= form_tag "/search", method: 'get', enforce_utf8: false, class: "nav-search radius" do %>
+									<%= text_field_tag :q, params[:q], placeholder: "Search a car", class: "text-search radius" %>
+								<% end %>
+	        				</div>
+	        			</li>
+	        			<li class="divider-right"></li>
+						<li>
+							<div class="nav-add">
+								<%= link_to "Add Car", signup_path, class: "button radius" %> 
+							</div>
+						</li>
+						<li>
+							<a data-dropdown="account-drop" data-options="is_hover:true; hover_timeout:5000" 
+															aria-controls="account-drop" 
+															aria-expanded="false">Account</a>
+							<ul id="account-drop" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+  								<li><%= link_to "Profile", current_user %></li>
+  								<li><%= link_to "Settings", '#' %></li>
+  								<li><%= link_to "Log Out", logout_path, method: "delete" %></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
 		</section>
+
+		<% else %>
+		<!-- Home Icon for logged out users-->
+		<ul class="title-area">
+			<li>
+				<a href="/">
+					<span class="fi-list-bullet home-icon"></span>
+				</a>
+			</li>
+		</ul>
+
+		<!-- Right and left bars for logged out users-->
+		<section class="top-bar-section">
+			<!-- Left Nav -->
+
+			<!-- Right Nav -->
+				<div class="right right-section">
+	        		<ul class="right nav-actions">
+	        			<!-- Search section -->
+	        			<li>
+							<div class="search-wrap">
+								<a href="#" class="search-icon"><i class="fi-magnifying-glass"></i></a>
+	            				<%= form_tag "/search", method: 'get', enforce_utf8: false, class: "nav-search radius" do %>
+									<%= text_field_tag :q, params[:q], placeholder: "Search a car", class: "text-search radius" %>
+								<% end %>
+	        				</div>
+	        			</li>
+	        			<li class="divider-right"></li>
+						<li>
+							<div class="nav-add">
+								<%= link_to "Add Car", signup_path, class: "button radius" %> 
+							</div>
+						</li>
+						<li>
+  							<%= link_to "Sign Up", signup_path %>
+						</li>
+					</ul>
+				</div>
+		</section>
+
+		<% end %>
+
 	</nav>
 
 </div>
