@@ -5,7 +5,7 @@ $silver-light	: #bdc3c7;
 $silver			: #66757f;
 $green-sea		: #16a085;
 
-.signup-content {
+.update-content {
 	display: block;
 	position: relative;
 	padding: 66px;
@@ -15,13 +15,7 @@ $green-sea		: #16a085;
 		}
 	}
 
-	.login-field {
-		background: $white;
-		border: 1px solid $silver-light;
-		padding: 20px 10px 10px 10px;
-	}
-
-	.signup-field {
+	.update-field {
 		background: $white;
 		border: 1px solid $silver-light;
 		margin-top: 20px;
