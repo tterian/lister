@@ -1,4 +1,17 @@
-.message-box {
+.alert-box {
 	position: relative;
-	padding: 56px;
+	margin-top: 56px;
+}
+
+.error_explanation {
+	margin-right: 15px;
+	li {
+		font-size: 14px;
+	}
+}
+
+.field_with_errors {
+	.form-control {
+    	color: red;
+  	}
 }

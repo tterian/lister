@@ -1,4 +1,6 @@
 <div class="row signup-content">
+	<%= render 'shared/error_messages' %>
+
 	<div class="large-6 columns signup-descr left">
 		<h2><b>Welcome to Lister.</b></h2>
 		<p>A user-friendly platform for posting and selling cars.</p>
@@ -39,14 +41,6 @@
 	      		<%= f.submit "Sign up for Lister", class: "button radius right" %>
 	      	</div>
 	    <% end %>
-	</div>
-	      	
-	<div class="row">
-	  	<div class="large-12 columns">
-	  		<div class="message-box">
-	  			<%= render 'shared/error_messages' %>
-	  		</div>
-	    </div>
 	</div>
 
 </div>
