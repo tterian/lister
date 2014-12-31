@@ -2,7 +2,9 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.0.rc3'
 gem 'bcrypt'
+gem 'faker'
 gem 'sqlite3'
+gem 'kaminari'
 
 gem 'jquery-rails'
 gem 'turbolinks'

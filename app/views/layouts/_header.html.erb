@@ -56,7 +56,7 @@
 															aria-expanded="false">Account</a>
 							<ul id="account-drop" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
   								<li><%= link_to "Profile", current_user %></li>
-  								<li><%= link_to "Settings", '#' %></li>
+  								<li><%= link_to "Settings", edit_user_path(current_user) %></li>
   								<li><%= link_to "Log Out", logout_path, method: "delete" %></li>
 							</ul>
 						</li>
