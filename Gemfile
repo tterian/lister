@@ -20,7 +20,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 ##end
 
 group :development, :test do
-##s	gem 'debugger'
+	gem 'debugger'
 	gem 'web-console', '~> 2.0'
 end
 

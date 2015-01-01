@@ -9,3 +9,21 @@ robot:
  name: bad robot
  email: bad.robot@gmail.com
  password_digest: <%= User.digest('password') %>
+
+dobby:
+ name: dobby the elf
+ email: dobby@freeelf.com
+ password_digest: <%= User.digest('password') %>
+ admin: true
+
+adam:
+ name: Nikolay Second
+ email: second@hand.org
+ password_digest: <%= User.digest('password') %>
+
+<% 30.times do |n| %>
+user_<%= n %>:
+ name: <%= "User #{n}" %>
+ email: <%= "user-#{n}@example.com" %>
+ password_digest: <%= User.digest('password') %>
+<% end %>
