@@ -8,7 +8,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
 
 	test "login with invalid invalid information" do 
 		get login_path
-		assert_template 'users/new'
+		assert_template 'sessions/new'
 		post login_path, session: { email: "", password: "" }
 		assert_template 'users/new'
 		assert_not flash.empty?

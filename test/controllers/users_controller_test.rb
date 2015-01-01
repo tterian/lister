@@ -8,11 +8,6 @@ class UsersControllerTest < ActionController::TestCase
         @admin_user = users(:dobby)
 	end
 
-	test "should get new" do
-    	get signup_path
-    	assert_response :success
-  	end
-
   	test "should redirect edit when not logged in" do
   		get :edit, id: @user
   		assert_not flash.empty?
@@ -46,9 +41,9 @@ class UsersControllerTest < ActionController::TestCase
 
     test "should redirect destroy when not logged in" do
         assert_no_difference 'User.count' do
-            delete :destrot, id: @admin_user
+            delete :destroy, id: @admin_user
         end
-        assert_redirected_to login_url
+        assert_redirected_to signup_url
     end
 
     test "should redirect destroy when logged in as a non-admin" do
