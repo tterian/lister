@@ -941,11 +941,11 @@ $button-bg-color: $green-sea;
 // $pagination-link-unavailable-bg-active: transparent;
 
 // We use these for currently selected anchor links
- $pagination-link-current-background: $green-sea;
+$pagination-link-current-background: $green-sea;
 // $pagination-link-current-font-color: $white;
 // $pagination-link-current-font-weight: $font-weight-bold;
 // $pagination-link-current-cursor: default;
-// $pagination-link-current-active-bg: $primary-color;
+$pagination-link-current-active-bg: $green-sea;
 
 // 21. Panels
 // - - - - - - - - - - - - - - - - - - - - - - - - -
