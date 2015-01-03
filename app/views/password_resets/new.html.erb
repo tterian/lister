@@ -1,7 +1,7 @@
 <h1>Find your Lister account</h1>
 <p>Enter your email.</p>
 
-<%= form_for(:password_reset, url: password_reset_path) do |f| %>
+<%= form_for(:password_reset, url: password_resets_path) do |f| %>
 	<%= f.text_field :email, class: 'form-control' %>
 
 	<%= f.submit "Submit", class: 'button' %>
