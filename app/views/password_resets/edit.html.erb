@@ -1,0 +1,14 @@
+<h1>Find your Lister account</h1>
+<p>Enter your email.</p>
+
+<%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
+	<%= render 'shared/error_messages' %>
+
+	<%= hidden_field_tag :email, @user.email %>
+
+	<%= f.password_field :password, placeholder: "New Password", class: 'form-control' %>
+
+	<%= f.password_field :password_confirmation, placeholder: "Re-enter New Password", class: 'form-control' %>
+
+	<%= f.submit "Update password", class: 'button' %>
+<% end %>
