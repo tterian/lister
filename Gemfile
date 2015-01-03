@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.0.rc3'
 gem 'bcrypt'
 gem 'faker'
-gem 'sqlite3'
 gem 'kaminari'
 
 gem 'jquery-rails'
@@ -20,8 +19,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 ##end
 
 group :development, :test do
+	gem 'sqlite3'
 	gem 'debugger'
 	gem 'web-console', '~> 2.0'
+end
+
+group :production do
+	gem 'pg'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
