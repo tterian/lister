@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  make: 1
+  user_id: 
+  model: 1
+  year: 2015-01-03 23:09:37
+  mileage: 1
+  price: 1
+  location: MyString
+  picture: MyString
+  fuel: 1
+  body: 1
+  drive: 1
+  hand: 1
+  door: 1
+  engine: MyString
+  transmission: 1
+  color: MyString
+  interior: MyString
+  note: MyText
+
+two:
+  make: 1
+  user_id: 
+  model: 1
+  year: 2015-01-03 23:09:37
+  mileage: 1
+  price: 1
+  location: MyString
+  picture: MyString
+  fuel: 1
+  body: 1
+  drive: 1
+  hand: 1
+  door: 1
+  engine: MyString
+  transmission: 1
+  color: MyString
+  interior: MyString
+  note: MyText
