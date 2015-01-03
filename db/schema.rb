@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20150103172039) do
     t.datetime "updated_at",     null: false
   end
 
+  add_index "cars", ["user_id", "created_at"], name: "index_cars_on_user_id_and_created_at"
   add_index "cars", ["user_id"], name: "index_cars_on_user_id"
 
   create_table "users", force: true do |t|
