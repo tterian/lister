@@ -1,6 +1,4 @@
 <div class="row signup-content">
-	<%= render 'shared/error_messages' %>
-
 	<div class="large-6 columns signup-descr left">
 		<h2><b>Welcome to Lister.</b></h2>
 		<p>A user-friendly platform for posting and selling cars.</p>
@@ -31,7 +29,8 @@
 	      	</div>
 	    <% end %>
 
-	    <%= form_for @user do |f| %>
+	    <%= form_for(@user) do |f| %>
+	    <%= render 'shared/error_messages', object: f.object %>
 	      	<div class="panel radius signup-field">
 	      		<p>New to Lister? Sign up!</p>
 	      		<%= f.text_field :name, placeholder: "Username", class: "form-control radius"  %>

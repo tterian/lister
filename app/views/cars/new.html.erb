@@ -1,29 +1,73 @@
 <div class="row add-content">
-
 	<div class="large-12 columns add-descr">
 		<h2><b>Add a car.</b></h2>
 	
-	    <%= form_for @car do |f| %>
+	    <%= form_for(@car) do |f| %>
+	    <%= render 'shared/error_messages', object: f.object %>
 	      	<div class="panel radius add-field">
-	      		<%= f.text_field :location, placeholder: "Please select your location", class: "form-control radius"  %>
-	      		<%= f.select :make, options_for_make, placeholder: "Make", class: "form-control radius"  %>
-	      		<%= f.select :model, placeholder: "Make", class: "form-control radius"  %>
-	      		<%= f.text_field :year, placeholder: "Make", class: "form-control radius"  %>
-	      		<%= f.text_field :mileage, placeholder: "Make", class: "form-control radius"  %>
-	      		<%= f.text_field :price, placeholder: "Make", class: "form-control radius"  %>
-	      		<%= f.text_field :location, placeholder: "Make", class: "form-control radius"  %>
-	      		<%= f.text_field :fuel, placeholder: "Make", class: "form-control radius"  %>
-	      		<%= f.text_field :body, placeholder: "Make", class: "form-control radius"  %>
-	      		<%= f.text_field :drive, placeholder: "Make", class: "form-control radius"  %>
-	      		<%= f.text_field :hand, placeholder: "Make", class: "form-control radius"  %>
-	      		<%= f.text_field :door, placeholder: "Make", class: "form-control radius"  %>
-	      		<%= f.text_field :engine, placeholder: "Make", class: "form-control radius"  %>
-	      		<%= f.text_field :transmission, placeholder: "Make", class: "form-control radius"  %>
-	      		<%= f.text_field :color, placeholder: "Make", class: "form-control radius"  %>
-	      		<%= f.text_field :interior, placeholder: "Make", class: "form-control radius"  %>
-	      		<%= f.text_field :note, placeholder: "Make", class: "form-control radius"  %>
-	      		<%= f.submit "Add car", class: "button radius right" %>
+	      		<div class="row">
+	      			<div class="large-12 columns">
+	      				<%= f.text_field :location, placeholder: "Please select your location", class: "form-control radius"  %>
+	      			</div>
+	      			<hr>
+	      			<div class="large-4 columns" >
+	      				<%= f.select :make, options_for_make {}, class: "form-control radius"  %>
+	      			</div>
+
+	      			<div class="large-4 columns">
+	      				<%= f.select :model, placeholder: "Model", class: "form-control radius"  %>
+	      			</div>
+
+	      			<div class="large-4 columns">
+	      				<%= f.text_field :year, placeholder: "Year", class: "form-control radius"  %>
+	      			</div>
+
+	      			<div class="large-6 columns">
+	      				<%= f.text_field :mileage, placeholder: "Mileage", class: "form-control radius"  %>
+	      			</div>
+
+	      			<div class="large-6 columns">
+	      				<%= f.text_field :price, placeholder: "Price", class: "form-control radius"  %>
+	      			</div>
+	      			<hr>
+
+	      			<div class="large-3 columns">
+		      			<%= f.text_field :fuel, placeholder: "Fuel type", class: "form-control radius"  %>
+		      		</div>
+
+		      		<div class="large-3 columns">
+		      		<%= f.text_field :body, placeholder: "Body style", class: "form-control radius"  %>
+	    	  		</div>
+
+	    	  		<div class="large-3 columns">
+	    	  			<%= f.text_field :drive, placeholder: "Drive train", class: "form-control radius"  %>
+	    	  		</div>
+
+	    	  		<div class="large-3 columns">
+	    	  			<%= f.text_field :hand, placeholder: "Hand drive", class: "form-control radius"  %>
+	      			</div>
+
+	      			<div class="large-3 columns">
+	      				<%= f.text_field :door, placeholder: "Door count", class: "form-control radius"  %>
+	      			</div>
+
+	      			<div class="large-3 columns">
+	      				<%= f.text_field :engine, placeholder: "Engine", class: "form-control radius"  %>
+	      			</div>
+
+	      			<div class="large-3 columns">
+	      				<%= f.text_field :transmission, placeholder: "Transmission", class: "form-control radius"  %>
+	      			</div>
+	      			<hr>
+	      			<div class="large-12 columns">
+	      				<%= f.text_area :note, placeholder: "Add description here", class: "form-control radius"  %>
+	      			</div>
+
+	      			<div class="columns">
+	      				<%= f.submit "Place ad", class: "button radius right" %>
+	      			</div>
 	      	</div>
+
 	    <% end %>
 	</div>
 

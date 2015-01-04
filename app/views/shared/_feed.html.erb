@@ -1,0 +1,6 @@
+<% if @cars.any? %>
+	<ol class="cars">
+    	<%= render @cars %>
+  	</ol>
+  	<%= paginate @cars %>
+<% end %>

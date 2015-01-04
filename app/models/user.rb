@@ -75,6 +75,11 @@ class User < ActiveRecord::Base
 		reset_sent_at < 2.hours.ago
 	end
 
+	#Defines a proto-feed.
+	def feed
+		cars
+	end
+
 	private
 
 	#Converts email to all lower-case for saving in db

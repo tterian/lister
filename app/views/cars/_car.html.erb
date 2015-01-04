@@ -4,5 +4,9 @@
 	<span class="content"><%= car.note %></span>
 	<span class="timestamp">
     	Posted <%= time_ago_in_words(car.created_at) %> ago.
+    	<% if current_user?(car.user) %>
+    		<%= link_to "delete", car, method: :delete, data: { confirm: "You sure?" } %>
+
+    	<% end %>
   	</span>
 </li>

@@ -1,8 +1,9 @@
 class CarsController < ApplicationController
-	before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
+	before_action :logged_in_user, 	only: [:new, :create]
+	before_action :correct_user, 	only: [:edit, :update, :destroy]
 
 	def new
-		@car = current_user.cars.new
+		@car = current_user.cars.build if logged_in?
 	end
 
 	def create
@@ -16,12 +17,20 @@ class CarsController < ApplicationController
 	end
 
 	def destroy
+		@car.destroy
+		flash[:success] = "Car deleted!"
+		redirect_to request.referrer || root_url
 	end
 
 	private
 
 	def car_params
 		params.require(:car).permit(:make, :note)
+	end
+
+	def correct_user
+		@car = current_user.cars.find_by(id: params[:id])
+		redirect_to root_url if @car.nil?
 	end
 
 end
