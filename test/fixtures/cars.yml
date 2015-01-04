@@ -1,8 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+batmobile:
   make: 1
-  user_id: 
+  user: test 
   model: 1
   year: 2015-01-03 23:09:37
   mileage: 1
@@ -19,10 +19,11 @@ one:
   color: MyString
   interior: MyString
   note: MyText
+  created_at: <%= 10.minutes.ago %>
 
-two:
+cube:
   make: 1
-  user_id: 
+  user: test 
   model: 1
   year: 2015-01-03 23:09:37
   mileage: 1
@@ -39,3 +40,33 @@ two:
   color: MyString
   interior: MyString
   note: MyText
+  created_at: <%= 3.years.ago %>
+
+most_recent:
+  make: 1
+  user: test 
+  model: 1
+  year: 2015-01-03 23:09:37
+  mileage: 1
+  price: 1
+  location: MyString
+  picture: MyString
+  fuel: 1
+  body: 1
+  drive: 1
+  hand: 1
+  door: 1
+  engine: MyString
+  transmission: 1
+  color: MyString
+  interior: MyString
+  note: MyText
+  created_at: <%= Time.zone.now %>
+
+<% 30.times do |n| %>
+car_<%= n %>:
+  make: <%= rand(1..10) %>
+  note: <%= Faker::Lorem.sentence(5) %>
+  created_at: <%= 42.days.ago %>
+  user: test
+<% end %>
