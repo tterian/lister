@@ -20,5 +20,14 @@ class CarsControllerTest < ActionController::TestCase
 		assert_redirected_to signup_url
 	end
 
+	test "should redirect destroy for wrong car" do
+		log_in_as(users(:test))
+		car = cars(:robot)
+		assert_no_difference 'Car.count' do
+			delete :destroy, id: car
+		end
+		assert_redirected_to root_url
+	end
+
 
 end

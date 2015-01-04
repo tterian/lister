@@ -1,5 +1,40 @@
+/* Custom colors */
+$white			: #fff;
+$asbestos		: #7f8c8d;
+$silver-light	: #bdc3c7;
+$silver			: #66757f;
+$green-sea		: #16a085;
+
+
 .home-content {
+	position: relative;
+	padding-top: 66px;
+	
+	.feed-content {
+
 	display: block;
 	position: relative;
-	padding-top: 56px;
+
+	.feed-field {
+		background: $white;
+		border: 1px solid $silver-light;
+
+	}
+
+	.button {
+		line-height: 1px;
+		height: 20px;
+	}
+
 }
+
+	.filter-content {
+	display: block;
+	position: relative;
+	height: 40px;
+
+	background: $white;
+	border: 1px solid $silver-light;
+}
+}
+

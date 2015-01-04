@@ -23,7 +23,7 @@ batmobile:
 
 cube:
   make: 1
-  user: test 
+  user: robot 
   model: 1
   year: 2015-01-03 23:09:37
   mileage: 1
@@ -44,7 +44,7 @@ cube:
 
 most_recent:
   make: 1
-  user: test 
+  user: dobby
   model: 1
   year: 2015-01-03 23:09:37
   mileage: 1

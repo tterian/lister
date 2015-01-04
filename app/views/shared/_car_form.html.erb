@@ -1,0 +1,69 @@
+<%= form_for(@car, html: { multipart: true }) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+   	<div class="panel radius add-field">
+   		<div class="row">
+   			<div class="large-12 columns">
+   				<%= f.text_field :location, placeholder: "Please select your location", class: "form-control radius"  %>
+   			</div>
+   			<hr>
+   			<div class="large-4 columns" >
+   				<%= f.select :make, options_for_make {}, class: "form-control radius"  %>
+   			</div>
+   			<div class="large-4 columns">
+   				<%= f.select :model, placeholder: "Model", class: "form-control radius"  %>
+   			</div>
+   			<div class="large-4 columns">
+   				<%= f.text_field :year, placeholder: "Year", class: "form-control radius"  %>
+   			</div>
+   			<div class="large-6 columns">
+   				<%= f.text_field :mileage, placeholder: "Mileage", class: "form-control radius"  %>
+   			</div>
+   			<div class="large-6 columns">
+   				<%= f.text_field :price, placeholder: "Price", class: "form-control radius"  %>
+   			</div>
+   			<hr>
+   			<div class="large-3 columns">
+      			<%= f.text_field :fuel, placeholder: "Fuel type", class: "form-control radius"  %>
+      		</div>
+      		<div class="large-3 columns">
+	      		<%= f.text_field :body, placeholder: "Body style", class: "form-control radius"  %>
+   	  		</div>
+   	  		<div class="large-3 columns">
+   	  			<%= f.text_field :drive, placeholder: "Drive train", class: "form-control radius"  %>
+   	  		</div>
+   	  		<div class="large-3 columns">
+   	  			<%= f.text_field :hand, placeholder: "Hand drive", class: "form-control radius"  %>
+   			</div>
+   			<div class="large-3 columns">
+   				<%= f.text_field :door, placeholder: "Door count", class: "form-control radius"  %>
+   			</div>
+   			<div class="large-3 columns">
+   				<%= f.text_field :engine, placeholder: "Engine", class: "form-control radius"  %>
+   			</div>
+   			<div class="large-3 columns">
+   				<%= f.text_field :transmission, placeholder: "Transmission", class: "form-control radius"  %>
+   			</div>
+   			<hr>
+   			<div class="large-12 columns">
+   				<%= f.text_area :note, placeholder: "Add description here", class: "form-control radius"  %>
+   			</div>
+   			<div class="columns picture">
+   				<%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+   			</div>
+
+   			<div class="columns">
+   				<%= f.submit "Place ad", class: "button radius right" %>
+   			</div>
+      	</div>
+    </div>
+<% end %>
+
+
+<script type="text/javascript">
+  $('#car_picture').bind('change', function() {
+    size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+</script>

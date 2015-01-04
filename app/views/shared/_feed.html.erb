@@ -1,6 +1,10 @@
 <% if @cars.any? %>
-	<ol class="cars">
-    	<%= render @cars %>
-  	</ol>
-  	<%= paginate @cars %>
+   	<div class="panel radius feed-field">
+   		<div class="row">
+			<ol class="cars">
+    			<%= render @cars %>
+  			</ol>
+  			<%= paginate @cars %>
+  		</div>
+  	</div>
 <% end %>

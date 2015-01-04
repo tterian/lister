@@ -1,7 +1,9 @@
 <li id="car-<%= car.id %>">
-	<span class="user"><%= link_to car.user.name, car.user %></span>
 	<span class="make"><%= car.make %></span>
-	<span class="content"><%= car.note %></span>
+	<span class="content">
+		<%= car.note %>
+		<%= image_tag car.picture.url if car.picture? %>
+	</span>
 	<span class="timestamp">
     	Posted <%= time_ago_in_words(car.created_at) %> ago.
     	<% if current_user?(car.user) %>
