@@ -11,30 +11,23 @@ $green-sea		: #16a085;
 	padding-top: 66px;
 	
 	.feed-content {
-
-	display: block;
-	position: relative;
-
-	.feed-field {
-		background: $white;
-		border: 1px solid $silver-light;
-
+		display: block;
+		.feed-field {
+			background: $white;
+			border: 1px solid $silver-light;
+		}
+		.button {
+			line-height: 1px;
+			height: 20px;
+		}
 	}
-
-	.button {
-		line-height: 1px;
-		height: 20px;
-	}
-
-}
 
 	.filter-content {
-	display: block;
-	position: relative;
-	height: 40px;
-
-	background: $white;
-	border: 1px solid $silver-light;
-}
+		display: block;
+		.filter-field {
+			background: $white;
+			border: 1px solid $silver-light;
+		}
+	}
 }
 

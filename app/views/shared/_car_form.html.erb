@@ -47,10 +47,11 @@
    			<div class="large-12 columns">
    				<%= f.text_area :note, placeholder: "Add description here", class: "form-control radius"  %>
    			</div>
+            <hr>
    			<div class="columns picture">
-   				<%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
-   			</div>
-
+                <%= f.label "Add picture" %>
+   				<%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>   			
+            </div>
    			<div class="columns">
    				<%= f.submit "Place ad", class: "button radius right" %>
    			</div>
