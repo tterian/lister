@@ -1,5 +1,7 @@
 class Car < ActiveRecord::Base
 	belongs_to :user
+#	has_one :make
+
 	default_scope -> { order(created_at: :desc) }
 	mount_uploader :picture, PictureUploader
 	
@@ -7,6 +9,7 @@ class Car < ActiveRecord::Base
 	validates 	:note, length: { maximum: 140 }
 	validates 	:make, presence: true
 	validate 	:picture_size
+
 
 	private
 
