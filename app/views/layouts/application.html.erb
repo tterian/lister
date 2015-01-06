@@ -14,11 +14,9 @@
     <body>
         <%= render 'layouts/header' %>
         <%= render 'layouts/messages' %>
-        <div class="row">
-            <div class="small-12 columns">
-                <%= yield %>
-            </div>
-        </div>
+
+        <%= yield %>
+
         <%= render 'layouts/footer' %>
         <%= javascript_include_tag "application" %>
     </body>

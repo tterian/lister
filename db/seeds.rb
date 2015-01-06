@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+require 'csv'
+
 User.create!(name: 					"Example User",
 			 email: 				"kimjong@un.org",
 			 password: 				"interview",
@@ -28,7 +30,7 @@ end
 
 users = User.order(:created_at).take(6)
 50.times do
-	make = rand(1..10)
+	make = rand(1..40)
 	note = Faker::Lorem.sentence(5)
 	users.each do |user|
 		user.cars.create!(make: make, note: note)
@@ -36,90 +38,18 @@ users = User.order(:created_at).take(6)
 end
 
 
-#Setup makes table
-
-makes = [ 	'Acura',
-			'Alfa Romeo',
-			'Aston Martin',
-			'Audi',
-			'BMW',
-			'Bentley',
-			'Bizzarrini',
-			'Bufori',
-			'Bugatti',
-			'Buick',
-			'CMC',
-			'Cadillac',
-			'Chevrolet',
-			'Chrysler',
-			'Citroen',
-			'Daewoo',
-			'Daihatsu',
-			'DeLorean',
-			'Dodge',
-			'Ferrari',
-			'Fiat',
-			'Fisker',
-			'Ford',
-			'GAC Gonow',
-			'GMC',
-			'Honda',
-			'Hummer',
-			'Hyundai',
-			'Infiniti',
-			'Isuzu',
-			'JAC',
-			'JMC',
-			'Jaguar',
-			'Jeep',
-			'Jinbei',
-			'Kia',
-			'Koenigsegg',
-			'Lada',
-			'Lamborghini',
-			'Lancia',
-			'Land Rover',
-			'Lexus',
-			'Lincoln',
-			'Lotus',
-			'MG',
-			'MINI',
-			'Maserati',
-			'Maybach',
-			'Mazda',
-			'McLaren',
-			'Mercedes-Benz',
-			'Mercury',
-			'Mitsubishi',
-			'Morgan',
-			'Nissan',
-			'Opel',
-			'Oullim',
-			'Pagani',
-			'Peugeot',
-			'Pontiac',
-			'Porsche',
-			'Proton',
-			'Renault',
-			'Rolls Royce',
-			'Rover',
-			'Saab',
-			'Seat',
-			'Shenlong/Sunlong',
-			'Skoda',
-			'Smart',
-			'Speranza',
-			'Ssang Yong',
-			'Subaru',
-			'Suzuki',
-			'TATA',
-			'Toyota',
-			'Volkswagen',
-			'Volvo',
-			'Wiesmann',
-			'Other Make' ]
-
-makes.each do |make|
-	Make.create!(name: make)
+puts "Importing car makes..."
+CSV.foreach(Rails.root.join("makes.csv"), headers: true) do |row|
+	Make.create! do |make|
+    	make.id = row[0]
+    	make.name = row[1]
+  	end
 end
 
+puts "Importing make models..."
+CSV.foreach(Rails.root.join("models.csv"), headers: true) do |row|
+	Model.create! do |model|
+    	model.make_id = row[1]
+    	model.name = row[2]
+  	end
+end

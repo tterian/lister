@@ -8,13 +8,14 @@ $green-sea		: #16a085;
 
 .home-content {
 	position: relative;
-	padding-top: 66px;
+	padding-top: 86px;
+
 	
 	.feed-content {
 		display: block;
 		.feed-field {
 			background: $white;
-			border: 1px solid $silver-light;
+			border: 1px solid $white;
 		}
 		.button {
 			line-height: 1px;
@@ -26,7 +27,7 @@ $green-sea		: #16a085;
 		display: block;
 		.filter-field {
 			background: $white;
-			border: 1px solid $silver-light;
+			border: 1px solid $white;
 		}
 	}
 }

@@ -7,10 +7,10 @@
    			</div>
    			<hr>
    			<div class="large-4 columns" >
-   				<%= f.select :make, options_for_make, class: "form-control radius"  %>
+   				<%= f.collection_select :make, Make.order(:name), :id, :name, prompt: "Please select a make", class: "form-control radius"  %>
    			</div>
    			<div class="large-4 columns">
-   				<%= f.select :model, placeholder: "Model", class: "form-control radius"  %>
+   				<%= f.grouped_collection_select :model, Make.order(:name), :models, :name, :id, :name, prompt: "Please select a model", class: "form-control radius" %>
    			</div>
    			<div class="large-4 columns">
    				<%= f.text_field :year, placeholder: "Year", class: "form-control radius"  %>
