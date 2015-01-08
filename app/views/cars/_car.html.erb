@@ -1,11 +1,11 @@
 <li id="car-<%= car.id %>">
-	<span class="make"><%= car.make %></span>
+	<span class="make"><%= Make.find_by(id: car.make).name %></span>
 	<span class="content">
 		<%= car.note %>
 		<%= image_tag car.picture.url if car.picture? %>
 	</span>
 	<span class="timestamp">
-    	Posted <%= time_ago_in_words(car.created_at) %> ago.
+    	added <%= time_ago_in_words(car.created_at) %> ago
     	<% if current_user?(car.user) %>
     		<%= link_to "delete", car, method: :delete, data: { confirm: "You sure?" } %>
 

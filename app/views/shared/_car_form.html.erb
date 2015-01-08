@@ -2,26 +2,42 @@
     <%= render 'shared/error_messages', object: f.object %>
    	<div class="panel radius add-field">
    		<div class="row">
-   			<div class="large-12 columns">
-   				<%= f.text_field :location, placeholder: "Please select your location", class: "form-control radius"  %>
+   			<div class="large-1 columns">
+   				<p>Title: </p>
    			</div>
+            <div class="large-10 columns title-bar">
+                <p id="add-car-title"></p>
+            </div>
+
    			<hr>
-   			<div class="large-4 columns" >
-   				<%= f.collection_select :make, Make.order(:name), :id, :name, prompt: "Please select a make", class: "form-control radius"  %>
+            <div class="large-12 columns">
+                <p>Basic data<small> (reqiured)</small></p>
+   			</div>
+            <div class="large-4 columns" >
+   				<%= f.collection_select :make, Make.order(:name), :id, :name, prompt: "Please select a make" %>
    			</div>
    			<div class="large-4 columns">
-   				<%= f.grouped_collection_select :model, Make.order(:name), :models, :name, :id, :name, prompt: "Please select a model", class: "form-control radius" %>
+   				<%= f.grouped_collection_select :model, Make.order(:name), :models, :name, :id, :name, prompt: "Please select a model" %>
    			</div>
    			<div class="large-4 columns">
-   				<%= f.text_field :year, placeholder: "Year", class: "form-control radius"  %>
+   				<%= f.select :year, options_for_year, prompt: "Please select a year" %>
    			</div>
-   			<div class="large-6 columns">
+   			<div class="large-5 columns">
    				<%= f.text_field :mileage, placeholder: "Mileage", class: "form-control radius"  %>
    			</div>
-   			<div class="large-6 columns">
+            <div class="large-1 columns">
+                <%= f.select :year, options_for_select(["km", "miles"]) %>
+            </div>
+   			<div class="large-5 columns">
    				<%= f.text_field :price, placeholder: "Price", class: "form-control radius"  %>
    			</div>
+            <div class="large-1 columns">
+                <%= f.select :year, options_for_select(["AMD", "USD", "EUR"]) %>
+            </div>
    			<hr>
+            <div class="large-12 columns">
+              <p>Additional data<small> (optional)</small> </p>
+            </div>
    			<div class="large-3 columns">
       			<%= f.text_field :fuel, placeholder: "Fuel type", class: "form-control radius"  %>
       		</div>
@@ -44,13 +60,18 @@
    				<%= f.text_field :transmission, placeholder: "Transmission", class: "form-control radius"  %>
    			</div>
    			<hr>
+            <div class="large-12 columns">
+                <p>Seller note<small> (optional)</small> </p>
+            </div>
    			<div class="large-12 columns">
    				<%= f.text_area :note, placeholder: "Add description here", class: "form-control radius"  %>
    			</div>
             <hr>
+            <div class="large-12 columns">
+                <p>Pictures<small> (optional)</small> </p>
+            </div>
    			<div class="columns picture">
-                <%= f.label "Add picture" %>
-   				<%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>   			
+   				<%= render 'shared/image_upload', object: f.object %>
             </div>
    			<div class="columns">
    				<%= f.submit "Place ad", class: "button radius right" %>

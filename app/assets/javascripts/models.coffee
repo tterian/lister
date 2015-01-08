@@ -3,17 +3,32 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
-  $('#car_model').prop('disabled', true)
-  models = $('#car_model').html()
-  $('#car_make').change ->
-    make = $('#car_make :selected').text()
-    escaped_make = make.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1')
-    options = $(models).filter("optgroup[label='#{escaped_make}']").html()
-    if options
-      $('#car_model').html(options)
-      $('#car_model').parent().show()
-      $('#car_model').prop('disabled', false)
-    else
-      $('#car_model').empty()
-      $('#car_model').parent().show()
-      $('#car_model').prop('disabled', true)
+
+    $('#car_model').prop('disabled', true)
+    $('#car_year').prop('disabled', true)
+    models = $('#car_model').html()
+    $('#car_make').change ->
+        make = $('#car_make :selected').text()
+        escaped_make = make.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1')
+        model_options = $(models).filter("optgroup[label='#{escaped_make}']").html()
+        $('#add-car-title').text(make + ' ' + model)
+        if model_options
+            $('#car_model').html(model_options)
+            $('#car_model').prop('disabled', false)
+            $('#car_year').prop('disabled', false)
+            model = $('#car_model :selected').text()
+            $('#add-car-title').text(make + ' ' + model)
+            $('#car_model').change ->
+                model = $('#car_model :selected').text()
+                $('#add-car-title').text(make + ' ' + model)
+        else
+            $('#car_model').empty()
+            $('#car_model').parent().show()
+            $('#car_model').prop('disabled', true)
+            $('#car_year').prop('disabled', true)
+            $('#add-car-title').empty()
+
+    $('#basic').fileupload
+        done: (e, data)->
+        console.log "Done", data.result
+        $("body").append(data.result)

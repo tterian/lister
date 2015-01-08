@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20150106071949) do
     t.integer  "make"
     t.integer  "user_id"
     t.integer  "model"
-    t.datetime "year"
+    t.integer  "year"
     t.integer  "mileage"
     t.integer  "price"
     t.string   "location"

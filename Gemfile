@@ -4,12 +4,19 @@ gem 'rails', '4.2.0.rc3'
 gem 'bcrypt'
 gem 'faker'
 gem 'sqlite3'
+
+##Pagination support
 gem 'kaminari'
+
+##Image manipulations
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 
+##jquery related stuff
 gem 'jquery-rails'
+gem 'jquery-fileupload-rails'
+
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc

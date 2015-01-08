@@ -10,6 +10,17 @@ class Car < ActiveRecord::Base
 	validates 	:make, presence: true
 	validate 	:picture_size
 
+	def to_jq_upload
+	    {
+	      "name" => read_attribute(:picture),
+	      "size" => picture.size,
+	      "url" => picture.url,
+	      "delete_url" => car_path(:id => id),
+	      "delete_type" => "DELETE"
+	    }
+  	end
+
+
 
 	private
 

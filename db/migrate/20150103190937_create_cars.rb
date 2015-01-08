@@ -4,7 +4,7 @@ class CreateCars < ActiveRecord::Migration
       t.integer :make
       t.references :user, index: true
       t.integer :model
-      t.datetime :year
+      t.integer :year
       t.integer :mileage
       t.integer :price
       t.string :location

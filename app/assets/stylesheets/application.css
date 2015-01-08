@@ -15,5 +15,6 @@
  *= require foundation_and_overrides
  */
 
-/* comment out for testing */
+
 @import 'foundation-icons';
+@import 'jquery.fileupload-ui';
