@@ -1,29 +1,28 @@
 <div class="panel radius feed-field">
-<div class="row">
-	<div class="large-12 columns">
-		<div class="left">
+    <div class="row">
+      	<div class="large-12 columns">
+            <div class="left">
+      			<label>
+              		<select>
+                		<option value="price-high-to-low">Price (High to Low)</option>
+                		<option value="price-low-to-high">Price (Low to High)</option>
+              		</select>
+            	</label>
+            </div>
 
-			<label>
-        		<select>
-          		<option value="price-high-to-low">Price (High to Low)</option>
-          		<option value="price-low-to-high">Price (Low to High)</option>
-        		</select>
-      		</label>
-      	</div>
+            <div class="right">
+            	<p><%= Car.count %> matches</p>
+            </div>
+        </div>
 
-      	<div class="right">
-      		<p><%= Car.count %> matches</p>
-      	</div>
+        <div class="large-12 columns">
+            <% if @cars.any? %>
+                <ol class="cars">
+                    <%= render @cars %>
+                </ol>
+            <% end %>
+
+            <%= paginate @cars %>
+        </div>
     </div>
-</div>
-
-<% if @cars.any? %>
-
-			<ol class="cars">
-    			<%= render @cars %>
-  			</ol>
-  			<%= paginate @cars %>
-
-<% end %>
-
 </div>

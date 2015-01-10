@@ -1,9 +1,8 @@
 class CreateCars < ActiveRecord::Migration
   def change
     create_table :cars do |t|
-      t.integer :make
+      t.integer :model_id
       t.references :user, index: true
-      t.integer :model
       t.integer :year
       t.integer :mileage
       t.integer :price

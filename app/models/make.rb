@@ -1,5 +1,5 @@
 class Make < ActiveRecord::Base
-	belongs_to :car
+	belongs_to :model
 	has_many :models
-
+	
 end

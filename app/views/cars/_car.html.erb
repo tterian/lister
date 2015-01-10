@@ -1,9 +1,11 @@
-<li id="car-<%= car.id %>">
-	<span class="make"><%= Make.find_by(id: car.make).name %></span>
-	<span class="content">
-		<%= car.note %>
-		<%= image_tag car.picture.url if car.picture? %>
-	</span>
+<div class="row">
+	<div class="large-12 column">
+	<li id="car-<%= car.id %>">
+		
+		<span class="content">
+			<%= image_tag car.picture.url if car.picture? %>
+			<%= car.note %>
+		</span>
 	<span class="timestamp">
     	added <%= time_ago_in_words(car.created_at) %> ago
     	<% if current_user?(car.user) %>
@@ -11,4 +13,6 @@
 
     	<% end %>
   	</span>
-</li>
+	</li>
+</div>
+</div>

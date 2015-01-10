@@ -25,12 +25,11 @@ class CarsController < ApplicationController
 	private
 
 	def car_params
-		params.require(:car).permit(:make, :model, :year, :mileage, :price, :note, :picture)
+		params.require(:car).permit(:model_id, :year, :mileage, :price, :note, :picture)
 	end
 
 	def correct_user
 		@car = current_user.cars.find_by(id: params[:id])
 		redirect_to root_url if @car.nil?
 	end
-
 end

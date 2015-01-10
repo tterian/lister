@@ -16,7 +16,7 @@ User.create!(name: 					"Example User",
 			 activated: 			true,
 			 activated_at: 			Time.zone.now)
 
-49.times do |n|
+20.times do |n|
 	name = Faker::Name.name
 	email = "example-#{n+1}@user.com"
 	password = "password"
@@ -28,12 +28,13 @@ User.create!(name: 					"Example User",
 				 activated_at: 			Time.zone.now)
 end
 
-users = User.order(:created_at).take(6)
-50.times do
-	make = rand(1..40)
+users = User.all
+40.times do
+	model_id = rand(1..400)
+	year = rand(1990..2014)
 	note = Faker::Lorem.sentence(5)
 	users.each do |user|
-		user.cars.create!(make: make, note: note)
+		user.cars.create!(model_id: model_id, year: year, note: note)
 	end
 end
 

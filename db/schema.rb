@@ -14,9 +14,8 @@
 ActiveRecord::Schema.define(version: 20150106071949) do
 
   create_table "cars", force: true do |t|
-    t.integer  "make"
+    t.integer  "model_id"
     t.integer  "user_id"
-    t.integer  "model"
     t.integer  "year"
     t.integer  "mileage"
     t.integer  "price"
@@ -41,12 +40,9 @@ ActiveRecord::Schema.define(version: 20150106071949) do
 
   create_table "makes", force: true do |t|
     t.string   "name"
-    t.integer  "car_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "makes", ["car_id"], name: "index_makes_on_car_id"
 
   create_table "models", force: true do |t|
     t.string   "name"
