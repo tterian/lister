@@ -9,38 +9,29 @@ $silver			: #66757f;
   padding: 0;
   li {
     padding: 10px 0;
-    border-top: 1px solid $silver;
   }
-  .user {
-    margin-top: 5em;
-    padding-top: 0;
-  }
+
   .content {
     display: block;
-    margin-left: 60px;
+    .car-title {
+      color: $silver;
+    }
+
     img {
       display: block;
       padding: 5px 0;
     }
-  }
-  .timestamp {
-    color: $silver;
-    display: block;
-    margin-left: 60px;
+
+    .car-timestamp p {
+      font-size: 12px;
+      color: $silver;
+      display: block;
+    }
+
+    .car-price {
+      padding-top: 40px;
+      color: $silver;
+    }
   }
 
-}
-
-aside {
-  textarea {
-    height: 100px;
-    margin-bottom: 5px;
-  }
-}
-
-span.picture {
-  margin-top: 10px;
-  input {
-    border: 0;
-  }
 }

@@ -4,8 +4,8 @@
             <div class="left">
       			<label>
               		<select>
-                		<option value="price-high-to-low">Price (High to Low)</option>
-                		<option value="price-low-to-high">Price (Low to High)</option>
+                		<option value="price-high-to-low">Price (High to Low) </option>
+                		<option value="price-low-to-high">Price (Low to High) </option>
               		</select>
             	</label>
             </div>
@@ -14,15 +14,16 @@
             	<p><%= Car.count %> matches</p>
             </div>
         </div>
-
+        <hr>
         <div class="large-12 columns">
             <% if @cars.any? %>
-                <ol class="cars">
+                <div class="cars">
                     <%= render @cars %>
-                </ol>
+                </div>
             <% end %>
 
             <%= paginate @cars %>
+
         </div>
     </div>
 </div>

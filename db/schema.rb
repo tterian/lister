@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20150106071949) do
 
   create_table "cars", force: true do |t|
+    t.integer  "make_id"
     t.integer  "model_id"
     t.integer  "user_id"
     t.integer  "year"

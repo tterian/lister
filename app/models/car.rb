@@ -1,7 +1,8 @@
 class Car < ActiveRecord::Base
-	attr_accessor :make_id, :mileage_type, :currency
+	attr_accessor :mileage_type, :currency
 	belongs_to :user
-	has_one :model
+	has_many :models
+	has_many :makes
 
 	default_scope -> { order(created_at: :desc) }
 	mount_uploader :picture, PictureUploader
@@ -9,7 +10,9 @@ class Car < ActiveRecord::Base
 	validates 	:user_id, presence: true
 	validates 	:note, length: { maximum: 140 }
 	validates 	:model_id, presence: true
+	validates	:make_id, presence: true
 	validate 	:picture_size
+
 
 	private
 
