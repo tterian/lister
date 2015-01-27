@@ -1,13 +1,52 @@
-// Place all the styles related to the Pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// High page-level styling.
+//
+// 1. Set the default `font-size` and `line-height` for the entire project,
+//    sourced from our default variables. The `font-size` is calculated to exist
+//    in ems, the `line-height` is calculated to exist unitlessly.
+// 2. Ensure the page always fills at least the entire height of the viewport.
+// 3. Prevent certain mobile browsers from automatically zooming fonts.
+// 4. Fonts on OSX will look more consistent with other systems that do not
+//    render text using sub-pixel anti-aliasing.
 
-html
-{
-    background-color: #fff;
+/* Custom colors */
+$white			: #fff;
+$asbestos		: #7f8c8d;
+$silver-light	: #bdc3c7;
+$silver			: #66757f;
+$green-sea		: #16a085;
+$grey			: #ecf0f1;
+
+
+html {
+//    font-size: ($base-font-size / 16px) * 1em; // [1]
+//    line-height: $base-line-height / $base-font-size; // [1]
+    background-color: #grey;
+//    color: $base-text-color;
+    min-height: 100%; // [2]
+    -webkit-text-size-adjust: 100%; // [3]
+        -ms-text-size-adjust: 100%; // [3]
+    -moz-osx-font-smoothing: grayscale; // [4]
+     -webkit-font-smoothing: antialiased; // [4]
+
+
+      -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+* {
+
+    &,
+    &:before,
+    &:after {
+        -webkit-box-sizing: inherit;
+           -moz-box-sizing: inherit;
+                box-sizing: inherit;
+        }
 }
 
 body
 {
-    background-color: #ecf0f1;
+    background-color: $grey;
+    min-height: 100%;
 }
