@@ -21,11 +21,7 @@ Rails.application.configure do
   # config.action_dispatch.rack_cache = true
 
   # Disable Rails's static asset server (Apache or NGINX will already do this).
-<<<<<<< HEAD
-  config.serve_static_assets = true
-=======
   config.serve_static_files = true
->>>>>>> Heroku-setup
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
