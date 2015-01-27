@@ -1,10 +1,10 @@
-<% if @user.errors.any? %>
+<% if object.errors.any? %>
     <div class="row">
         <div class="large-12 columns">
             <div data-alert class="alert-box alert radius">
                 <p>Oops! seems there is something wrong with the entered data, please check following fields:<p>
                 <ul>
-                    <% @user.errors.full_messages.each do |msg| %>
+                    <% object.errors.full_messages.each do |msg| %>
                         <li><%= msg %></li>
                     <% end %>
                 </ul>

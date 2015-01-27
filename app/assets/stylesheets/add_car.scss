@@ -1,0 +1,34 @@
+/* Custom colors */
+$white			: #fff;
+$asbestos		: #7f8c8d;
+$silver-light	: #bdc3c7;
+$silver			: #66757f;
+$green-sea		: #16a085;
+
+.add-content {
+
+	display: block;
+	position: relative;
+	padding-top: 66px;
+	.add-descr {
+		h2, p {
+			color: $silver;
+		}
+	}
+
+	.add-field {
+		background: $white;
+		border: 1px solid $silver-light;
+		.title-bar {
+
+		}
+
+	}
+
+	.button {
+		line-height: 1px;
+		height: 20px;
+	}
+
+}
+

@@ -1,0 +1,26 @@
+<li id="car-<%= car.id %>">		
+	<div class="content">
+		<div class="left">
+			<div class="car-title">
+				<b><%= Make.where(id: car.make_id).first.name %> <%= Model.where(id: car.model_id).first.name %></b>
+			</div>
+			<div class="car-thumb">
+				<%= image_tag car.picture.thumb.url if car.picture? %>
+			</div>
+			<div class="car-timestamp">
+				<p>added <%= time_ago_in_words(car.created_at) %> ago
+	    		<% if current_user?(car.user) %>
+	    			<%= link_to "delete", car, method: :delete, data: { confirm: "You sure?" } %>
+	    		<% end %>
+	    		</p>
+	    	</div>
+	    </div>
+
+	    <div class="right">
+	    	<div class="car-price">
+	    		<%= car.price %>
+	    	</div>
+	 	</div>
+	</div>
+</li>
+<hr>

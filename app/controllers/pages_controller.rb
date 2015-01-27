@@ -1,10 +1,11 @@
 class PagesController < ApplicationController
-  def home
-  end
+    def home
+        @cars = Car.order("created_at").page(params[:page]).per(20)
+    end
 
-  def help
-  end
+    def help
+    end
 
-  def about
-  end
+    def about
+    end
 end

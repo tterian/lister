@@ -75,4 +75,13 @@ class UserTest < ActiveSupport::TestCase
   		assert_not @user.authenticated?(:remember, '')
   	end
 
+  	##cars association tests
+  	test "associated cars should be destroyed" do
+  		@user.save
+  		@user.cars.create!(make: "2")
+  		assert_difference 'Car.count', -1 do
+  			@user.destroy
+  		end
+  	end
+
 end

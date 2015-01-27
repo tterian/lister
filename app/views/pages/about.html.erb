@@ -1,2 +1,16 @@
-<h1>Pages#about</h1>
-<p>Find me in app/views/pages/about.html.erb</p>
+<div class="row">
+    <div class="large-12 columns">
+<div class="about">
+
+<%= form_for(@car, html: { multipart: true, id: "fileupload" }) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <span class="picture">
+    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+  </span>
+  <% end %>
+
+
+
+</div>
+</div>
+</div>

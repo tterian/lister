@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	has_many :cars, dependent: :destroy
 	attr_accessor	:remember_token, :activation_token
 	before_save		:downcase_email
 	before_create	:create_activation_digest
@@ -72,6 +73,11 @@ class User < ActiveRecord::Base
 	#Returns true if a password reset has expired.
 	def password_reset_expired?
 		reset_sent_at < 2.hours.ago
+	end
+
+	#Defines a proto-feed.
+	def feed
+		cars
 	end
 
 	private

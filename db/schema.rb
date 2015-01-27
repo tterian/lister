@@ -11,7 +11,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150103071314) do
+ActiveRecord::Schema.define(version: 20150106071949) do
+
+  create_table "cars", force: true do |t|
+    t.integer  "make_id"
+    t.integer  "model_id"
+    t.integer  "user_id"
+    t.integer  "year"
+    t.integer  "mileage"
+    t.integer  "price"
+    t.string   "location"
+    t.string   "picture"
+    t.integer  "fuel"
+    t.integer  "body"
+    t.integer  "drive"
+    t.integer  "hand"
+    t.integer  "door"
+    t.string   "engine"
+    t.integer  "transmission"
+    t.string   "color"
+    t.string   "interior"
+    t.text     "note"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "cars", ["user_id", "created_at"], name: "index_cars_on_user_id_and_created_at"
+  add_index "cars", ["user_id"], name: "index_cars_on_user_id"
+
+  create_table "makes", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "models", force: true do |t|
+    t.string   "name"
+    t.integer  "make_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "models", ["make_id"], name: "index_models_on_make_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

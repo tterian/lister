@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		@cars = @user.cars.page(params[:page]).per(20)
 	end
 
 	def create
@@ -54,14 +55,6 @@ class UsersController < ApplicationController
 
 	#Before filters
 
-	#Confirms the logged-in user
-	def logged_in_user
-		unless logged_in?
-			store_location
-			flash[:alert] = "Please log in to continue."
-			redirect_to signup_url
-		end
-	end
 
 	#Confirms the correct user
 	def correct_user

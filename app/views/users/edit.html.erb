@@ -1,5 +1,4 @@
 <div class="row update-content">
-	<%= render 'shared/error_messages' %>
 
 	<div class="large-6 columns signup-descr left">
 		<h2><b>Account.</b></h2>
@@ -7,7 +6,8 @@
 	</div>
 	
 	<div class="large-6 columns right">
-	    <%= form_for @user do |f| %>
+	    <%= form_for(@user) do |f| %>
+	    <%= render 'shared/error_messages', object: f.object %>
 	      	<div class="panel radius update-field">
 	      		<%= f.text_field :name, placeholder: "Username", class: "form-control radius"  %>
 	      		<%= f.text_field :email, placeholder: "Email", class: "form-control radius" %>

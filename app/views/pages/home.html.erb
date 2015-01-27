@@ -1,4 +1,11 @@
 <div class="home-content">
-	<h1>Pages#home</h1>
-	<p>Find me in app/views/pages/home.html.erb</p>
+	<div class="row">
+		<div class="large-4 columns filter-content">
+			<%= render 'shared/filter' %>
+		</div>	
+
+		<div class="large-8 columns feed-content">
+			<%= render 'shared/feed' %>
+		</div>
+	</div>
 </div>
