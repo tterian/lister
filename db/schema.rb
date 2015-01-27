@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 20150106071949) do
     t.datetime "updated_at",   null: false
   end
 
-  add_index "cars", ["user_id", "created_at"], name: "index_cars_on_user_id_and_created_at"
-  add_index "cars", ["user_id"], name: "index_cars_on_user_id"
+  add_index "cars", ["user_id", "created_at"], name: "index_cars_on_user_id_and_created_at", using: :btree
+  add_index "cars", ["user_id"], name: "index_cars_on_user_id", using: :btree
 
   create_table "makes", force: true do |t|
     t.string   "name"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20150106071949) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "models", ["make_id"], name: "index_models_on_make_id"
+  add_index "models", ["make_id"], name: "index_models_on_make_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -69,6 +69,6 @@ ActiveRecord::Schema.define(version: 20150106071949) do
     t.datetime "reset_sent_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end

@@ -9,19 +9,18 @@
 //    render text using sub-pixel anti-aliasing.
 
 /* Custom colors */
-$white			: #fff;
-$asbestos		: #7f8c8d;
+$white        : #fff;
+$asbestos     : #7f8c8d;
 $silver-light	: #bdc3c7;
-$silver			: #66757f;
+$silver       : #66757f;
 $green-sea		: #16a085;
-$grey			: #ecf0f1;
+$grey         : #ecf0f1;
 
 
 html {
 //    font-size: ($base-font-size / 16px) * 1em; // [1]
 //    line-height: $base-line-height / $base-font-size; // [1]
-    background-color: #grey;
-//    color: $base-text-color;
+    background-color: $grey;
     min-height: 100%; // [2]
     -webkit-text-size-adjust: 100%; // [3]
         -ms-text-size-adjust: 100%; // [3]
@@ -49,4 +48,5 @@ body
 {
     background-color: $grey;
     min-height: 100%;
+
 }
