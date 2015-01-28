@@ -22,7 +22,7 @@ class CreateCars < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_foreign_key :cars, :users, :models, :makes
+    add_foreign_key :cars, :users, :models
     add_index :cars, [:user_id, :created_at]
   end
 end
