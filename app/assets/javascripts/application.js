@@ -15,3 +15,6 @@
 //= require foundation
 //= require angular
 //= require_tree .
+
+
+$(function(){ $(document).foundation(); });

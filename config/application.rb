@@ -21,7 +21,7 @@ module Lister
     # config.i18n.default_locale = :de
     config.assets.paths << Rails.root.join("lib","assets","bower_components")
     config.assets.paths << Rails.root.join("lib","assets","bower_components","foundation")
-    config.assets.paths << Rails.root.join("lib","assets","bower_components","lumx","dist","fonts")
+    config.assets.paths << Rails.root.join("lib","assets","bower_components","foundation-icons")
     config.assets.precompile << %r(.*.(?:eot|svg|ttf|woff)$)
 
     config.serve_static_files = true
