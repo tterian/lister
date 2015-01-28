@@ -24,6 +24,6 @@ class CreateCars < ActiveRecord::Migration
 #    add_foreign_key :cars, :users
 #    add_foreign_key :cars, :model
 
-    add_index :cars, :user_id
+#    add_index :cars, :user_id
   end
 end

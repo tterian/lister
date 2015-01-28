@@ -1,7 +1,7 @@
 class Car < ActiveRecord::Base
 	attr_accessor :mileage_type, :currency
-	belongs_to :user
-	has_one :model
+	belongs_to :user, foreign_key: "user_id"
+	has_one :model, foreign_key: "model_id"
 
 	default_scope -> { order(created_at: :desc) }
 	mount_uploader :picture, PictureUploader
