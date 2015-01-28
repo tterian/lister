@@ -6,6 +6,6 @@ class CreateModels < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_foreign_key :models, :make
+#    add_foreign_key :models, :make
   end
 end
