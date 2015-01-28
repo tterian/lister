@@ -45,18 +45,18 @@ CSV.foreach(Rails.root.join("models.csv"), headers: true) do |row|
 end
 
 
-puts "Creating cars..."
-users = User.all
-40.times do
-	make_id = rand(1..40)
-	model_id = rand(1..400)
-	year = rand(1990..2014)
-	mileage = rand(100000..200000)
-	price = rand(10000..30000)
-	note = Faker::Lorem.sentence(5)
-	users.each do |user|
-		user.cars.create!(make_id: make_id, model_id: model_id, price: price, year: year, note: note)
-	end
-end
+#puts "Creating cars..."
+#users = User.all
+#40.times do
+#	make_id = rand(1..40)
+#	model_id = rand(1..400)
+#	year = rand(1990..2014)
+#	mileage = rand(100000..200000)
+#	price = rand(10000..30000)
+#	note = Faker::Lorem.sentence(5)
+#	users.each do |user|
+#		user.cars.create!(make_id: make_id, model_id: model_id, price: price, year: year, note: note)
+#	end
+#end
 
 

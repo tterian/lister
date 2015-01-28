@@ -1,5 +1,3 @@
 class Model < ActiveRecord::Base
-	belongs_to :car
-#	has_many :makes
-
+	belongs_to :make
 end

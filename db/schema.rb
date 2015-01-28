@@ -14,7 +14,6 @@
 ActiveRecord::Schema.define(version: 20150106071949) do
 
   create_table "cars", force: true do |t|
-    t.integer  "make_id"
     t.integer  "model_id"
     t.integer  "user_id"
     t.integer  "year"
@@ -36,7 +35,6 @@ ActiveRecord::Schema.define(version: 20150106071949) do
     t.datetime "updated_at",   null: false
   end
 
-  add_index "cars", ["user_id", "created_at"], name: "index_cars_on_user_id_and_created_at", using: :btree
   add_index "cars", ["user_id"], name: "index_cars_on_user_id", using: :btree
 
   create_table "makes", force: true do |t|

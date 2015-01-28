@@ -2,7 +2,6 @@ class CreateCars < ActiveRecord::Migration
   def change
     create_table :cars do |t|
       t.references :model, index: true
-      t.references :make, index: true
       t.references :user, index: true
       t.integer :year
       t.integer :mileage
@@ -22,7 +21,9 @@ class CreateCars < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_foreign_key :cars, :users, :models
-    add_index :cars, [:user_id, :created_at]
+    add_foreign_key :cars, :users
+    add_foreign_key :cars, :model
+
+    add_index :cars, :user_id
   end
 end

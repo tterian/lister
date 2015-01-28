@@ -4,6 +4,6 @@ class CreateMakes < ActiveRecord::Migration
       t.string :name, index: true
       t.timestamps null: false
     end
-    add_foreign_key :cars, :makes
+
   end
 end
