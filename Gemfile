@@ -19,6 +19,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'bower-rails'
 
 gem 'foreman'
+gem 'puma'
+
 
 group :production, :staging do
 	gem "rails_12factor"
