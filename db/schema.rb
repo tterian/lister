@@ -35,8 +35,6 @@ ActiveRecord::Schema.define(version: 20150106071949) do
     t.datetime "updated_at",   null: false
   end
 
-  add_index "cars", ["user_id"], name: "index_cars_on_user_id", using: :btree
-
   create_table "makes", force: true do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -49,8 +47,6 @@ ActiveRecord::Schema.define(version: 20150106071949) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "models", ["make_id"], name: "index_models_on_make_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -66,7 +62,5 @@ ActiveRecord::Schema.define(version: 20150106071949) do
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end
