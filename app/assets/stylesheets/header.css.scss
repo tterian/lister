@@ -6,9 +6,9 @@ $silver-light	: #bdc3c7;
 $concrete		: #95a5a6;
 
 
-/* Top bar styling */
 .topbar {
 	height: 46px;
+	color: $white;
 	border-bottom: 1px solid $silver-light;
 	position: fixed;		
 	top: 0;
@@ -69,9 +69,6 @@ $concrete		: #95a5a6;
 }
 
 
-
-/* Styles for expanding search element */
-
 .search-wrap {
 	background-color: $white;
 	padding-top: 1px;
@@ -101,9 +98,9 @@ $concrete		: #95a5a6;
 .fi-magnifying-glass {
 	position: absolute;
 	margin-left: 148px;
-	font-size: 22px;
+	font-size: 20px;
 	color: #cccccc;
-	z-index: 2;
+	z-index: 1;
 }
 
 .nav-add {

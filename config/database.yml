@@ -10,18 +10,18 @@ development:
  database: db/listr_development
  host: localhost
  username: tigranas
- password: 
+ password: Virl645830
 
 test:
  <<: *default
  database: db/listr_test
  host: localhost
  username: tigranas
- password: 
+ password: Virl645830
 
 production:
  <<: *default
  database: db/listr_production
  host: localhost
  username: tigranas
- password: 
+ password: Virl645830

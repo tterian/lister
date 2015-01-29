@@ -32,3 +32,35 @@ $green-sea		: #16a085;
 	}
 }
 
+
+.cars {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+  }
+
+  .content {
+    display: block;
+    .car-title {
+      color: $silver;
+    }
+
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+
+    .car-timestamp p {
+      font-size: 12px;
+      color: $silver;
+      display: block;
+    }
+
+    .car-price {
+      padding-top: 40px;
+      color: $silver;
+    }
+  }
+
+}
