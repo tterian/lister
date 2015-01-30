@@ -13,6 +13,9 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 
+##Advanced search
+gem 'ransack'
+
 gem 'jquery-rails'
 gem 'jquery-fileupload-rails'
 gem 'jbuilder', '~> 2.0'

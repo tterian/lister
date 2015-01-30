@@ -2,13 +2,13 @@
 //     COLORS
 //\*------------*/
 
-$white			: #fff;
-$asbestos		: #7f8c8d;
-$silver-light	: #bdc3c7;
-$silver			: #66757f;
-$green-sea		: #16a085;
-$concrete		: #95a5a6;
-$grey 			: #ecf0f1;
+$white        : #fff;
+$asbestos     : #7f8c8d;
+$silver-light : #bdc3c7;
+$silver       : #66757f;
+$green-sea    : #16a085;
+$concrete     : #95a5a6;
+$grey         : #ecf0f1;
 
 .home-content {
 	position: relative;
@@ -20,6 +20,11 @@ $grey 			: #ecf0f1;
 		.feed-field {
 			background: $white;
 			border: 1px solid $silver-light;
+      .sort-field {
+        .sort-count p {
+          font-size: 14px;
+        }
+      } 
 		}
 		.button {
 			line-height: 1px;
@@ -62,7 +67,6 @@ $grey 			: #ecf0f1;
     }
 
     .car-price {
-      padding-top: 40px;
       color: $silver;
     }
   }

@@ -1,18 +1,24 @@
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
-  <div class="col-md-8">
-    <% if @user.cars.any? %>
-      <h3>Cars (<%= @user.cars.count %>)</h3>
-      <ol class="cars">
-        <%= render @cars %>
-      </ol>
-      <%= paginate @cars %>
-    <% end %>
-  </div>
-</div
+<div class="profile-field">
+	<div class="row">
+		<div class="large-12 columns">
+			<div>
+				<h2><b><%= @user.name %><h2><b>
+			</div>
+
+		</div>
+
+        <div class="large-12 columns">
+        	<div class="panel radius user-cars">
+            <% if @user.cars.any? %>
+            	<p>You have posted <%= @user.cars.count %> cars.</p>
+                <div class="cars">
+                    <%= render @cars %>
+                </div>
+            <% end %>
+            <%= paginate @cars %>
+            </div>
+        </div>
+
+
+	</div>
+</div>

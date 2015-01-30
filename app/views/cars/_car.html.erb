@@ -2,7 +2,10 @@
 	<div class="content">
 		<div class="left">
 			<div class="car-title">
-				<b> <%= Model.where(id: car.model_id).first.name %></b>
+				<b> 
+					<%= Make.where(id: Model.where(id: car.model_id).first.make_id).first.name %>
+					<%= Model.where(id: car.model_id).first.name %>
+				</b>
 			</div>
 			<div class="car-thumb">
 				<%= image_tag car.picture.thumb.url if car.picture? %>
@@ -16,10 +19,8 @@
 	    	</div>
 	    </div>
 
-	    <div class="right">
-	    	<div class="car-price">
-	    		<%= car.price %>
-	    	</div>
+	    <div class="car-price right">
+	    	<%= car.price %>
 	 	</div>
 	</div>
 </li>

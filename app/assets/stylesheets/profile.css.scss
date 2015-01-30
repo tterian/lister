@@ -1,0 +1,25 @@
+$white			: #fff;
+$asbestos		: #7f8c8d;
+$silver-light	: #bdc3c7;
+$silver			: #66757f;
+$green-sea		: #16a085;
+$concrete		: #95a5a6;
+$grey 			: #ecf0f1;
+
+
+.profile-field {
+	display: block;
+	position: relative;
+	padding-top: 66px;
+	h2, p {
+		color: $silver;
+	}
+}
+
+.user-cars {
+	display: block;
+	background: $white;
+	border: 1px solid $silver-light;
+}
+
+

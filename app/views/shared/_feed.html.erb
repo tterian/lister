@@ -1,7 +1,7 @@
 <div class="panel radius feed-field">
     <div class="row">
-      	<div class="large-12 columns">
-            <div class="left">
+      	<div class="large-12 columns sort-field">
+<!--            <div class="right">
       			<label>
               		<select>
                 		<option value="price-high-to-low">Price (High to Low) </option>
@@ -9,8 +9,8 @@
               		</select>
             	</label>
             </div>
-
-            <div class="right">
+-->
+            <div class="sort-count left">
             	<p><%= Car.count %> matches</p>
             </div>
         </div>
@@ -21,9 +21,7 @@
                     <%= render @cars %>
                 </div>
             <% end %>
-
             <%= paginate @cars %>
-
         </div>
     </div>
 </div>
