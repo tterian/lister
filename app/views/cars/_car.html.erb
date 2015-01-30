@@ -2,7 +2,7 @@
 	<div class="content">
 		<div class="left">
 			<div class="car-title">
-				<b><%= Make.where(id: car.make_id).first.name %> <%= Model.where(id: car.model_id).first.name %></b>
+				<b> <%= Model.where(id: car.model_id).first.name %></b>
 			</div>
 			<div class="car-thumb">
 				<%= image_tag car.picture.thumb.url if car.picture? %>

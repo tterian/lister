@@ -1,5 +1,6 @@
 class Car < ActiveRecord::Base
-	attr_accessor :mileage_type, :currency
+	attr_accessor :mileage_type, :currency, :make_id
+	
 	belongs_to :user, foreign_key: "user_id"
 	has_one :model, foreign_key: "model_id"
 

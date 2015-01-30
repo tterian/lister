@@ -1,10 +1,14 @@
-/* Custom colors */
+///*------------*\
+//     COLORS
+//\*------------*/
+
 $white			: #fff;
+$asbestos		: #7f8c8d;
+$silver-light	: #bdc3c7;
 $silver			: #66757f;
 $green-sea		: #16a085;
-$silver-light	: #bdc3c7;
 $concrete		: #95a5a6;
-
+$grey 			: #ecf0f1;
 
 .topbar {
 	height: 46px;
@@ -31,23 +35,9 @@ $concrete		: #95a5a6;
 .home-style {
 	color: $silver;
 	float: left;
-	font-size: 13px;
-	padding-left: 5px;
-	margin-top: 13px;
-}
-
-.feed-icon {
-	color: $silver;
-	float: left;
-	margin-left: 4px;
-	font-size: 30px;
-}
-
-.feed-style {
-	color: $silver;
-	font-size: 13px;
-	margin-left: 5px;
-	margin-top: 13px;
+	font-size: 14px;
+	padding-left: 8px;
+	margin-top: 12px;
 }
 
 .mail-icon {
@@ -59,9 +49,9 @@ $concrete		: #95a5a6;
 
 .mail-style {
 	color: $silver;
-	font-size: 13px;
-	margin-left: 5px;
-	margin-top: 13px;
+	font-size: 14px;
+	margin-left: 8px;
+	margin-top: 12px;
 }
 
 .divider {
@@ -108,15 +98,12 @@ $concrete		: #95a5a6;
 	padding-top: 1px;
 	padding-left: 16px;
 	padding-right: 8px;
-	.fi-plus {
-		position: absolute;
-		margin-top: 5px;
-		margin-left: 6px;
-		font-size: 22px;
-		color: $white;
-		z-index: 2;
-	}
 }
+
+.dropdown-title {
+	font-size: 14px;
+}
+
 
 
 

@@ -1,13 +1,12 @@
 <div class="contain-to-grid sticky topbar">
 
 	<nav class="top-bar global-nav">
-		<% if logged_in? %>
 		<!-- Home Icon for logged in users-->
 		<ul class="title-area">
 			<li>
 				<a href="/">
-					<span class="fi-home home-icon"></span>
-					<span class="home-style">Home</span>
+					<span class="fi-list-bullet home-icon"></span>
+					<span class="home-style">Lister</span>
 				</a>
 			</li>
 			<li class="divider"></li>
@@ -16,6 +15,7 @@
 		<!-- Right and left bars for logged in users-->
 		<section class="top-bar-section">
 			<!-- Left Nav -->
+				<% if logged_in? %>
 				<ul class="left left-section">
 					<li>
 						<a href="mail">
@@ -23,15 +23,8 @@
 							<span class="mail-style">Notifications</span>
 						</a>
 					</li>
-
-					<li>
-						<a href="/">
-							<span class="fi-list-bullet feed-icon"></span>
-							<span class="feed-style">My Feed</span>
-						</a>
-					</li>
 				</ul>
-
+				<% end %>
 			<!-- Right Nav -->
 				<div class="right right-section">
 	        		<ul class="right nav-actions">
@@ -45,13 +38,16 @@
 	        				</div>
 	        			</li>
 	        			<li class="divider-right"></li>
+	        			
+	        			<% if logged_in? %>
 						<li>
 							<div class="nav-add">
 								<%= link_to "Add Car", new_car_path, class: "button radius" %> 
 							</div>
 						</li>
+
 						<li>
-							<a data-dropdown="account-drop" 
+							<a data-dropdown="account-drop" class="dropdown-title"
 															aria-controls="account-drop" 
 															aria-expanded="false">Account</a>
 							<ul id="account-drop" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
@@ -60,37 +56,8 @@
   								<li><%= link_to "Log Out", logout_path, method: "delete" %></li>
 							</ul>
 						</li>
-					</ul>
-				</div>
-		</section>
 
-		<% else %>
-		<!-- Home Icon for logged out users-->
-		<ul class="title-area">
-			<li>
-				<a href="/">
-					<span class="fi-list-bullet home-icon"></span>
-				</a>
-			</li>
-		</ul>
-
-		<!-- Right and left bars for logged out users-->
-		<section class="top-bar-section">
-			<!-- Left Nav -->
-
-			<!-- Right Nav -->
-				<div class="right right-section">
-	        		<ul class="right nav-actions">
-	        			<!-- Search section -->
-	        			<li>
-							<div class="search-wrap">
-								<a href="#" class="search-icon"><i class="fi-magnifying-glass"></i></a>
-	            				<%= form_tag "/search", method: 'get', enforce_utf8: false, class: "nav-search radius" do %>
-									<%= text_field_tag :q, params[:q], placeholder: "Search a car", class: "text-search radius" %>
-								<% end %>
-	        				</div>
-	        			</li>
-	        			<li class="divider-right"></li>
+						<% else %>
 						<li>
 							<div class="nav-add">
 								<%= link_to "Add Car", signup_path, class: "button radius" %> 
@@ -99,14 +66,11 @@
 						<li>
   							<%= link_to "Sign Up", signup_path %>
 						</li>
+						<% end %>
 					</ul>
 				</div>
 		</section>
-
-		<% end %>
-
 	</nav>
-
 </div>
 
 
