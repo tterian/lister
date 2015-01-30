@@ -31,7 +31,9 @@
 	        			<!-- Search section -->
 	        			<li>
 							<div class="search-wrap">
+								<!-- Removed search icon untill I fix the positioning issue
 								<a href="#" class="search-icon"><i class="fi-magnifying-glass"></i></a>
+								-->
 	            				<%= form_tag "/search", method: 'get', enforce_utf8: false, class: "nav-search radius" do %>
 									<%= text_field_tag :q, params[:q], placeholder: "Search a car", class: "text-search radius" %>
 								<% end %>
