@@ -30,8 +30,7 @@ _This example is based on PostreSQL so make sure you have your pg server up and 
 
 ## Database structure
 
-Post a pic here.
-
+![DB structure](https://github.com/tterian/img/blob/master/listr_db.png)
 
 ## TODO:
 
